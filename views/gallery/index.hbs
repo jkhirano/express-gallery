@@ -1,0 +1,22 @@
+// main gallery page
+
+<h1>_Architekt</h1>
+
+<div id="Welcome">Welcome to our online portfolio, we are small group of passionate designers and architects, looking to
+    change and create amazing digital images to inspire others to follow in our innovative steps. Free Archtect
+    WordPress Theme</div>
+
+<div>
+    <a href='/gallery/new'><button>Add Photo</button></a><br><br>
+
+    <div>{{#if error}}</div>
+    {{error.errorMessage}}
+    {{/if}}
+
+    {{#each gallery }}
+    {{!-- title - link --}}
+    <div><a href='/gallery/{{id}}'>{{ name }} - {{ link }}</a></div>
+    {{!-- Edit link --}}
+    <a href="/gallery/{{id}}/edit"> <button>Edit Photo</button></a><br><br>
+    {{/each}}
+</div>
